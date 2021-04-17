@@ -94,7 +94,8 @@ def user_stats(df):
 
 userInputs = get_filters()
 print(userInputs)
-res = load_data(userInputs[0], userInputs[1], userInputs[2])
-time_stats(res)
-station_stats(res)
-trip_duration_stats(res)
+if isinstance(userInputs, list):
+    res = load_data(userInputs[0], userInputs[1], userInputs[2])
+    time_stats(res)
+    station_stats(res)
+    trip_duration_stats(res)
